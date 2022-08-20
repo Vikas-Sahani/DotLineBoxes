@@ -4,10 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Again Dots and Boxes</title>
-    <style></style>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+        }
+        li{
+            word-spacing: 15px;
+            letter-spacing: 3px;
+            line-height: 30px;
+            font-size:larger;
+            font-weight: 500;
+            font-style: italic;
+        }
+        div{
+            position: absolute;
+            right: 100px;
+            width: 400px;
+        }
+    </style>
 </head>
 
 <body>
+    <h1>Dot Line Boxes Game</h1>
+    <div>
+        <h2>Game Rules</h2>
+        <ul>
+            <li>Mouse Hover between two Dots.</li><br/>
+            <li>Click if Line is visible.</li><br/>
+            <li>like the same, make the maximum boxs.</li><br/>
+            <li>if Player makes the maximum boxs then Player wins. </li><br/>
+            <li>if Computer makes the maximum boxs then Computer wins. </li><br/>
+            <li>if both made equal boxs then game Draw.</li><br/>
+        </ul>
+    </div>
     <script>
         // game parameters
         const DELAY_END = 2; // seconds until a new game starts
@@ -305,10 +337,10 @@
         function Square(x, y, w, h) {
             this.w = w;
             this.h = h;
-            this.bot = y + h;
-            this.left = x;
-            this.right = x + w;
-            this.top = y;
+            this.bot = y + h;       //bottop point of Square
+            this.left = x;          //left point of Square
+            this.right = x + w;     //right point of Square
+            this.top = y;           //top point of Square    
             this.highlight = null;
             this.numSelected = 0;
             this.owner = null;
